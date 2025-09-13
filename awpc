@@ -1,0 +1,529 @@
+A) Create an application that obtains 4 integer values from the user and displays the product.
+Code:
+using System;
+class Product
+{
+    static void Main()
+    {
+        int a, b, c, d, product;
+        Console.Write("Enter first number: ");
+        a = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Enter second number: ");
+        b = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Enter third number: ");
+        c = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Enter fourth number: ");
+        d = Convert.ToInt32(Console.ReadLine());
+
+        product = a * b * c * d;
+        Console.WriteLine("Product of numbers = " + product);
+
+        Console.ReadKey();
+    }
+}
+
+Output: 
+
+
+
+
+
+
+B) Create an application that displays the Fibonacci series.
+Code:
+using System;
+class Fibonacci
+{
+    static void Main()
+    {
+        int n, first = 0, second = 1, next;
+        Console.Write("Enter number of terms: ");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Fibonacci Series: ");
+        for (int i = 0; i < n; i++)
+        {
+            if (i <= 1)
+                next = i;
+            else
+            {
+                next = first + second;
+                first = second;
+                second = next;
+            }
+            Console.Write(next + " ");
+        }
+        Console.ReadKey();
+    }
+}
+Output:
+
+
+
+
+C) Create an application that obtains an integer from the user and displays whether the number is a prime number or not.
+Code:
+using System;
+class Prime
+{
+    static void Main()
+    {
+        int n, i, flag = 0;
+        Console.Write("Enter a number: ");
+        n = Convert.ToInt32(Console.ReadLine());
+
+        for (i = 2; i <= n / 2; i++)
+        {
+            if (n % i == 0)
+            {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0 && n > 1)
+            Console.WriteLine(n + " is Prime");
+        else
+            Console.WriteLine(n + " is Not Prime");
+
+        Console.ReadKey();
+    }
+}
+
+Output:
+
+
+
+Practical 2
+
+A) Take four numbers from the user and print the largest number.
+Code:
+using System;
+class LargestNumber
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter 4 numbers:");
+        int a = Convert.ToInt32(Console.ReadLine());
+        int b = Convert.ToInt32(Console.ReadLine());
+        int c = Convert.ToInt32(Console.ReadLine());
+        int d = Convert.ToInt32(Console.ReadLine());
+
+        int largest = a;
+
+        if (b > largest) largest = b;
+        if (c > largest) largest = c;
+        if (d > largest) largest = d;
+
+        Console.WriteLine("Largest number is: " + largest);
+
+        Console.ReadKey();
+    }
+}
+Output: 
+
+
+
+
+
+B) Create an application that checks whether an integer is positive or negative
+Code:
+using System;
+class PositiveNegative
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = Convert.ToInt32(Console.ReadLine());
+
+        if (num > 0)
+            Console.WriteLine("Positive Number");
+        else if (num < 0)
+            Console.WriteLine("Negative Number");
+        else
+            Console.WriteLine("Number is ZERO");
+
+        Console.ReadKey();
+    }
+}
+
+
+Output: 
+
+
+
+
+
+
+
+
+
+
+C) Create an application that checks whether an integer is even or odd.
+Code:
+using System;
+class EvenOdd
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = Convert.ToInt32(Console.ReadLine());
+
+        if (num % 2 == 0)
+            Console.WriteLine(num + " is Even");
+        else
+            Console.WriteLine(num + " is Odd");
+
+        Console.ReadKey();
+    }
+}
+
+Output:
+
+
+
+
+
+
+
+
+D) Create an application to show the implementation of Switch Case
+Code:
+using System;
+class CalendarSwitch
+{
+    static void Main()
+    {
+        Console.Write("Enter month number (1-12): ");
+        int month = Convert.ToInt32(Console.ReadLine());
+
+        switch (month)
+        {
+            case 1: Console.WriteLine("January"); break;
+            case 2: Console.WriteLine("February"); break;
+            case 3: Console.WriteLine("March"); break;
+            case 4: Console.WriteLine("April"); break;
+            case 5: Console.WriteLine("May"); break;
+            case 6: Console.WriteLine("June"); break;
+            case 7: Console.WriteLine("July"); break;
+            case 8: Console.WriteLine("August"); break;
+            case 9: Console.WriteLine("September"); break;
+            case 10: Console.WriteLine("October"); break;
+            case 11: Console.WriteLine("November"); break;
+            case 12: Console.WriteLine("December"); break;
+            default: Console.WriteLine("Invalid Month Number"); break;
+        }
+
+        Console.ReadKey();
+    }
+}
+
+
+Output:
+
+
+
+
+
+Practical 3
+
+A) Show the use of while loop in C#
+Code:
+using System;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Incremented Loop");
+        int i = 1;
+        while (i <= 10)
+        {
+            Console.Write(i + "\t");
+            i++;
+        }
+
+        Console.WriteLine("\nDecremented Loop");
+        int j = 10;
+        while (j >= 1)
+        {
+            Console.Write(j + "\t");
+            j--;
+        }
+        Console.ReadKey();
+    }
+}
+
+Output:
+
+B) Showcase the use of Do While Loop in C#.
+Code:
+using System;
+
+class Program
+{
+    public static void Main(string[] args)
+    {
+        PrintAscending(1, 10);
+        Console.WriteLine();  // line break
+        PrintDescending(10, 1);
+    }
+
+    // Method to print numbers in ascending order
+    static void PrintAscending(int start, int end)
+    {
+        int i = start;
+        do
+        {
+            Console.Write(i + "\t");
+            i++;
+        } while (i <= end);
+    }
+
+    // Method to print numbers in descending order
+    static void PrintDescending(int start, int end)
+    {
+        int j = start;
+        do
+        {
+            Console.Write(j + "\t");
+            j--;
+        } while (j >= end);
+    }}
+Output:
+
+
+C) Display the use of For and For Each Loop in C#.
+Code:
+using System;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Incremented Loop");
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.Write(i + "\t");
+        }
+
+        Console.WriteLine("\nDecremented Loop");
+        for (int j = 10; j >= 1; j--)
+        {
+            Console.Write(j + "\t");
+        }
+        Console.WriteLine("\nFor Each Loop");
+        int[] num = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        
+        foreach (int s in num)
+        {
+            Console.Write(s + "\t");
+        }
+    }Output:
+Practical 4
+
+A) Create an application that takes a number from the user and returns its factorial.
+Code:
+using System;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Enter a number: ");
+        int num = Convert.ToInt32(Console.ReadLine());
+        int fact = 1;
+
+        for (int i = 1; i <= num; i++)
+        {
+            fact = fact * i;
+        }
+
+        Console.WriteLine("Factorial of " + num + " is: " + fact);
+        Console.ReadKey();
+    }
+}
+
+
+
+Output:
+
+
+
+
+
+
+B) Create a money Conversion application in C#.
+Code:
+using System;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Enter amount in USD: ");
+        double usd = Convert.ToDouble(Console.ReadLine());
+
+        double inr = usd * 88;
+        Console.WriteLine("Amount in INR = " + inr);
+
+        Console.ReadKey();
+    }
+}
+
+Output:
+
+
+
+
+
+C) Create a temperature Conversion application in C#.
+Code:
+using System;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.Write("Enter temperature in Celsius: ");
+        double c = Convert.ToDouble(Console.ReadLine());
+        double f = (c * 9 / 5) + 32;
+        Console.WriteLine("Temperature in Fahrenheit = " + f);
+
+        Console.Write("\nEnter temperature in Fahrenheit: ");
+        f = Convert.ToDouble(Console.ReadLine());
+        c = (f - 32) * 5 / 9;
+        Console.WriteLine("Temperature in Celsius = " + c);
+
+        Console.ReadKey();
+    }
+}
+
+Output:
+
+
+
+Practical 5
+
+A) Display Function Overloading in C#.
+Code:
+using System;
+namespace Overloading
+{
+    class SwapDemo
+    {
+        public void Swap(int a, int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+            Console.WriteLine("After Swapping (int): a = " + a + ", b = " + b);
+        }
+
+        public void Swap(double a, double b)
+        {
+            double temp = a;
+            a = b;
+            b = temp;
+            Console.WriteLine("After Swapping (double): a = " + a + ", b = " + b);
+        }
+    }
+
+    class MainClass
+    {
+        static void Main()
+        {
+            SwapDemo s = new SwapDemo();
+
+            Console.WriteLine("Function Overloading Example (Swapping)\n");
+
+            s.Swap(10, 20);
+            s.Swap(12.5, 45.7);
+
+            Console.ReadKey();
+        }
+    }
+Output:
+
+
+
+B) Showcase Parameterized Constructor in C#.
+Code:
+using System;
+
+namespace Constructor
+{
+    class paraconstrctor
+    {
+
+        public paraconstrctor(int x, int y)
+        {
+            int c = x + y;
+            Console.WriteLine("The Sum of the two numbers is "+c);
+        }
+    }
+
+    class MainClass
+    {
+        static void Main()
+        {
+            Console.WriteLine("\t");
+            Console.WriteLine("Enter the first Number: ");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("\nEnter the Second Number: ");
+            int b = Convert.ToInt32(Console.ReadLine());
+            paraconstrctor v = new paraconstrctor(a, b);
+            
+            
+            Console.Read();
+        }
+    }
+}
+
+Output:
+
+
+
+
+
+
+
+
+C) Show Copy Constructor in C#.
+Code:
+using System;
+
+namespace copyConstructor
+{
+    class employee
+    {
+        private string name;
+        private int age;
+
+        public employee(employee emp)
+        {
+            name = emp.name;
+            age = emp.age;
+        }
+
+        public employee(string name, int age)
+        {
+            this.name = name;
+            this.age = age;
+        }
+
+        public string Details
+        {
+            get
+            {
+                return "The age of " + name + " is " + age.ToString();
+            }
+        }
+    }
+
+    class empdetail
+    {
+        static void Main()
+        {
+            employee emp1 = new employee("Vithal", 23);
+            employee emp2 = new employee(emp1);
+
+            Console.WriteLine(emp2.Details);
+            Console.ReadLine();
+        }
+    }
+}
